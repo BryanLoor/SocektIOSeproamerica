@@ -34,7 +34,8 @@ io.on('connection',(socket)=>{
 
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello world</h1>');
+  res.send('<h1>Socket Corriendo...</h1>');
+  
 });
 
 http.listen(3000, () => {
