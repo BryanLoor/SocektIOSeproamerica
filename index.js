@@ -2,7 +2,7 @@
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-
+const port = Process.env.PORT || 3000 
 
 io.on('connection',(socket)=>{
     console.log("Nuevo cliente conectado")
@@ -32,6 +32,6 @@ app.get('/', (req, res) => {
 
 });
 
-http.listen(3000, () => {
+http.listen(port, () => {
   console.log('listening on *:3000');
 });
