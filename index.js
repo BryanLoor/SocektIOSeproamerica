@@ -1,13 +1,7 @@
 
 const app = require('express')();
 const http = require('http').Server(app);
-const io = require('socket.io')(http,{
-    cors:{
-        origin:true,
-        credentials:true,
-        methods:["GET","POST"]
-    }
-});
+const io = require('socket.io')(http);
 
 
 io.on('connection',(socket)=>{
@@ -35,7 +29,7 @@ io.on('connection',(socket)=>{
 
 app.get('/', (req, res) => {
   res.send('<h1>Socket Corriendo...</h1>');
-  
+
 });
 
 http.listen(3000, () => {
